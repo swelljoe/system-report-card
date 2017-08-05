@@ -67,7 +67,7 @@ report_card () {
   printf "${CYAN}          Total Real Memory:${GREEN} ${system_memtotal_mb}${NORMAL} MB\n"
   printf "${CYAN}          Total Swap Memory:${GREEN} ${system_swaptotal_mb}${NORMAL} MB\n"
   printf "${CYAN}      Total Disk Space On /:${GREEN} ${system_root_fstotal_mb}${NORMAL} MB\n"
-  printf "${CYAN}  Available Disk Space on /:${GREEN} ${system_root_fsavail_mb}${NORMAL} MB\n"
+  printf "${CYAN}  Available Disk Space On /:${GREEN} ${system_root_fsavail_mb}${NORMAL} MB\n"
   printf "${NORMAL}"
 }
 
@@ -113,8 +113,8 @@ report_card_suggestions () {
   needed_root_fs_avail=$((needed_root_fs_avail + needed_swap))
   needed_root_fs_avail_mb=$((needed_root_fs_avail / 1024))
   if [ "$needed_root_fs_avail" -gt "$system_root_fsavail" ]; then
-    printf "${CYAN}  Available Disk Space on /:${YELLOW} ${system_root_fsavail_mb}${NORMAL} MB (suggested: ⩾${RED}${needed_root_fs_avail_mb}${NORMAL} MB)\n"
+    printf "${CYAN}  Available Disk Space On /:${YELLOW} ${system_root_fsavail_mb}${NORMAL} MB (suggested: ⩾${RED}${needed_root_fs_avail_mb}${NORMAL} MB)\n"
   else
-    printf "${CYAN}  Available Disk Space on /:${GREEN} ${system_root_fsavail_mb}${NORMAL} MB (OK: ⩾${CYAN}${needed_root_fs_avail_mb}${NORMAL} MB)\n"
+    printf "${CYAN}  Available Disk Space On /:${GREEN} ${system_root_fsavail_mb}${NORMAL} MB (OK: ⩾${CYAN}${needed_root_fs_avail_mb}${NORMAL} MB)\n"
   fi
 }
